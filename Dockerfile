@@ -7,7 +7,15 @@ WORKDIR /app
 
 COPY . .
 
-RUN apt-get update && apt-get install libaio1 -y
+RUN apt-get update && apt-get install libaio1 -y && apt-get install unzip -y
+
+ADD https://download.oracle.com/otn_software/linux/instantclient/instantclient-basic-linuxx64.zip driver_oracle.zip
+
+RUN unzip driver_oracle.zip && mv instantclient_21_1 oracle
+
+#RUN wget https://download.oracle.com/otn_software/linux/instantclient/instantclient-basic-linuxx64.zip && \
+#    unzip instantclient-basic-linuxx64.zip && \
+#    mv instantclient_21_1 oracle    
 
 RUN yarn install && yarn build
 

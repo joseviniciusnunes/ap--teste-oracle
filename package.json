@@ -12,7 +12,7 @@
         "start": "LD_LIBRARY_PATH=./oracle nest start",
         "dev": "LD_LIBRARY_PATH=./oracle nest start --watch",
         "start:debug": "LD_LIBRARY_PATH=./oracle nest start --debug --watch",
-        "start:prod": "echo $LD_LIBRARY_PATH && ls $LD_LIBRARY_PATH && node dist/main",
+        "start:prod": "node dist/main",
         "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
     },
     "dependencies": {
